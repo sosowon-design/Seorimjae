@@ -103,7 +103,7 @@
 
 @keyframes circular-progress {
   from {
-    stroke-dashoffset: 100.5;
+    stroke-dashoffset: 301.6;
   }
   to {
     stroke-dashoffset: 0;
