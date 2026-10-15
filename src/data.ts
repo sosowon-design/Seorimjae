@@ -5,38 +5,64 @@
 
 import { Room, Experience, FaqItem } from "./types";
 
+import exteriorImg from "./assets/images/poolvilla_exterior_1783441698730.jpg";
+import poolImg from "./assets/images/poolvilla_pool_1783441712578.jpg";
+import bedroomImg from "./assets/images/poolvilla_bedroom_1783441742073.jpg";
+import terraceImg from "./assets/images/poolvilla_firepit_empty_1783609417760.jpg";
+import bbqEveningTerraceImg from "./assets/images/bbq_evening_terrace_1787252026772.jpg";
+import diningImg from "./assets/images/poolvilla_dining_1783441765027.jpg";
+import teaDetailImg from "./assets/images/poolvilla_tea_detail_1783443892753.jpg";
+import cozyLinensImg from "./assets/images/poolvilla_cozy_linens_1783443907020.jpg";
+import breakfastImg from "./assets/images/poolvilla_breakfast_1783705791307.jpg";
+import forestImg from "./assets/images/pine_forest_path_1783705944162.jpg";
+import roomInteriorImg from "./assets/images/seorimjae_room_interior_1783715563964.jpg";
+import bedroomLoungeImg from "./assets/images/seorimjae_bedroom_lounge_1783715573919.jpg";
+import hinokiBeddingImg from "./assets/images/seorimjae_hinoki_bedding_1783715584947.jpg";
+import diningViewImg from "./assets/images/seorimjae_dining_view_1783717019026.jpg";
+import hanokNumaruImg from "./assets/images/hanok_numaru_stay_1785259063508.jpg";
+import seorimjaeDiningSpaceImg from "./assets/images/seorimjae_dining_space_1785609789997.jpg";
+import seorimjaeCozyBeddingImg from "./assets/images/seorimjae_cozy_bedding_1785609804952.jpg";
+import seorimjaeHinokiSpaImg from "./assets/images/seorimjae_hinoki_spa_1785609822645.jpg";
+import seorimjaeSereneTeaCeremonyImg from "./assets/images/seorimjae_serene_tea_ceremony_1787321032789.jpg";
+import villaOnHinokiImg from "./assets/images/villa_on_hinoki_1785385906598.jpg";
+import villaOnTeaRoomImg from "./assets/images/villa_on_tea_room_1785385923103.jpg";
+import villaOnBedroomImg from "./assets/images/villa_on_bedroom_1785385934940.jpg";
+import villaDoInfinityImg from "./assets/images/villa_do_infinity_1785385947960.jpg";
+import villaDoFirepitImg from "./assets/images/villa_do_firepit_1785385965437.jpg";
+import villaDoDuplexImg from "./assets/images/villa_do_duplex_1785385977617.jpg";
+
 // Dynamic paths to generated pool villa assets
 export const IMAGES = {
-  exterior: "/src/assets/images/poolvilla_exterior_1783441698730.jpg",
-  pool: "/src/assets/images/poolvilla_pool_1783441712578.jpg",
-  bedroom: "/src/assets/images/poolvilla_bedroom_1783441742073.jpg",
-  terrace: "/src/assets/images/poolvilla_firepit_empty_1783609417760.jpg",
-  bbqTerrace: "/src/assets/images/bbq_evening_terrace_1787252026772.jpg",
-  eveningTerrace: "/src/assets/images/bbq_evening_terrace_1787252026772.jpg",
-  dining: "/src/assets/images/poolvilla_dining_1783441765027.jpg",
-  teaDetail: "/src/assets/images/poolvilla_tea_detail_1783443892753.jpg",
-  cozyLinens: "/src/assets/images/poolvilla_cozy_linens_1783443907020.jpg",
-  breakfast: "/src/assets/images/poolvilla_breakfast_1783705791307.jpg",
-  forest: "/src/assets/images/pine_forest_path_1783705944162.jpg",
-  roomInterior: "/src/assets/images/seorimjae_room_interior_1783715563964.jpg",
-  bedroomLounge: "/src/assets/images/seorimjae_bedroom_lounge_1783715573919.jpg",
-  hinokiBedding: "/src/assets/images/seorimjae_hinoki_bedding_1783715584947.jpg",
-  diningView: "/src/assets/images/seorimjae_dining_view_1783717019026.jpg",
-  hanokNumaru: "/src/assets/images/hanok_numaru_stay_1785259063508.jpg",
+  exterior: exteriorImg,
+  pool: poolImg,
+  bedroom: bedroomImg,
+  terrace: terraceImg,
+  bbqTerrace: bbqEveningTerraceImg,
+  eveningTerrace: bbqEveningTerraceImg,
+  dining: diningImg,
+  teaDetail: teaDetailImg,
+  cozyLinens: cozyLinensImg,
+  breakfast: breakfastImg,
+  forest: forestImg,
+  roomInterior: roomInteriorImg,
+  bedroomLounge: bedroomLoungeImg,
+  hinokiBedding: hinokiBeddingImg,
+  diningView: diningViewImg,
+  hanokNumaru: hanokNumaruImg,
   // Dedicated bespoke assets for Seorimjae
-  seorimjaeDiningSpace: "/src/assets/images/seorimjae_dining_space_1785609789997.jpg",
-  seorimjaeCozyBedding: "/src/assets/images/seorimjae_cozy_bedding_1785609804952.jpg",
-  seorimjaeHinokiSpa: "/src/assets/images/seorimjae_hinoki_spa_1785609822645.jpg",
-  seorimjaeTeaLounge: "/src/assets/images/seorimjae_serene_tea_ceremony_1787321032789.jpg",
-  modernTeaSpace: "/src/assets/images/seorimjae_serene_tea_ceremony_1787321032789.jpg",
+  seorimjaeDiningSpace: seorimjaeDiningSpaceImg,
+  seorimjaeCozyBedding: seorimjaeCozyBeddingImg,
+  seorimjaeHinokiSpa: seorimjaeHinokiSpaImg,
+  seorimjaeTeaLounge: seorimjaeSereneTeaCeremonyImg,
+  modernTeaSpace: seorimjaeSereneTeaCeremonyImg,
   // Dedicated unique assets for Villa On
-  villaOnHinoki: "/src/assets/images/villa_on_hinoki_1785385906598.jpg",
-  villaOnTeaRoom: "/src/assets/images/villa_on_tea_room_1785385923103.jpg",
-  villaOnBedroom: "/src/assets/images/villa_on_bedroom_1785385934940.jpg",
+  villaOnHinoki: villaOnHinokiImg,
+  villaOnTeaRoom: villaOnTeaRoomImg,
+  villaOnBedroom: villaOnBedroomImg,
   // Dedicated unique assets for Villa Do
-  villaDoInfinity: "/src/assets/images/villa_do_infinity_1785385947960.jpg",
-  villaDoFirepit: "/src/assets/images/villa_do_firepit_1785385965437.jpg",
-  villaDoDuplex: "/src/assets/images/villa_do_duplex_1785385977617.jpg",
+  villaDoInfinity: villaDoInfinityImg,
+  villaDoFirepit: villaDoFirepitImg,
+  villaDoDuplex: villaDoDuplexImg,
 };
 
 // 5 images that scroll/carousel through
