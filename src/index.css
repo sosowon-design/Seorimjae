@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Gowun Batang", serif;
+  --font-sans: "Gowun Batang", serif;
+  --font-display: "Gowun Batang", serif;
+  --font-cormorant: "Gowun Batang", serif;
+  --font-pretendard: "Gowun Batang", serif;
+  --font-gowun: "Gowun Batang", serif;
+  --color-brand-beige: #F9F7F2;
+  --color-brand-warm: #EFECE3;
+  --color-brand-charcoal: #1F2421;
+  --color-brand-olive: #3E503C;
+  --color-brand-gold: #3E503C;
+}
+
+@layer utilities {
+  .font-cormorant,
+  .font-pretendard,
+  .font-sans,
+  .font-serif,
+  .font-gowun {
+    font-family: "Gowun Batang", serif !important;
+  }
+
+  /* Ensure all annotations, captions, footnotes, and guide notes are slightly bolder */
+  .annotation,
+  .footnote,
+  small,
+  caption,
+  .font-light {
+    font-weight: 500 !important;
+  }
+
+  /* Ensure all English title annotations/eyebrows above headings are distinctly bold */
+  .title-eyebrow,
+  .font-cormorant.uppercase,
+  span.uppercase[class*="tracking-"],
+  div[class*="text-brand-olive"] > span.uppercase,
+  .eyebrow-text {
+    font-weight: 700 !important;
+  }
+}
+
+@layer base {
+  *,
+  body,
+  button,
+  input,
+  select,
+  textarea,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  div,
+  li,
+  ul,
+  ol,
+  label {
+    font-family: "Gowun Batang", serif !important;
+  }
+
+  body {
+    background-color: var(--color-brand-beige);
+    color: var(--color-brand-charcoal);
+    font-family: "Gowun Batang", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Custom line-height and letter-spacing for the emotional stay vibe */
+  p, span, li, div {
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Custom scrollbar to keep it looking minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fbfbf9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e2dc;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c2c2bc;
+}
+
+@keyframes circular-progress {
+  from {
+    stroke-dashoffset: 100.5;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-circular-loader {
+  animation: circular-progress 5000ms linear infinite;
+}
+
+@keyframes ambient-drift {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.04) translate3d(-0.4%, -0.4%, 0);
+  }
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+.animate-ambient-image {
+  animation: ambient-drift 14s ease-in-out infinite;
+  will-change: transform;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "서림재 (Seorimjae)",
+  "description": "푸른 솔숲 사이 고요한 명상과 온수 유영을 향유하는 아늑한 독채 풀빌라, 서림재입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
