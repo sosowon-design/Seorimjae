@@ -46,9 +46,6 @@ export default function Header({
     // Instant React state navigation with transitions and scroll to top
     onNavigate(id);
     window.scrollTo({ top: 0, behavior: "instant" });
-    // Update address bar query
-    const newUrl = window.location.origin + window.location.pathname + (id === "home" ? "" : "?page=" + id);
-    window.history.pushState({ path: newUrl }, "", newUrl);
   };
 
   // Header transparency logic: When mobile menu is open, header must blend seamlessly with zero opaque bar or blur line

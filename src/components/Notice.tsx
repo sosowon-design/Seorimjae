@@ -208,7 +208,7 @@ export default function Notice({ onNavigate }: NoticeProps) {
       <div className="py-20 sm:py-24 bg-[#F9F7F2] border-b border-brand-warm/60">
         <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
           
-          <div className="text-center mb-12">
+          <div className="text-center mb-6 sm:mb-10">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -236,7 +236,7 @@ export default function Notice({ onNavigate }: NoticeProps) {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-[13.5px] font-pretendard font-light text-neutral-600 max-w-xl mx-auto mt-3 leading-relaxed break-keep text-center"
             >
-              시설 및 서비스에 대해 자주 궁금해하시는<br className="sm:hidden" /> 핵심 안내사항입니다.
+              시설 및 서비스에 대한 핵심 안내사항입니다.
             </motion.p>
           </div>
 
@@ -263,7 +263,9 @@ export default function Notice({ onNavigate }: NoticeProps) {
                       className="w-full flex justify-between items-center text-left group cursor-pointer"
                     >
                       <div className="flex items-center gap-2 sm:gap-2.5 min-w-0 flex-1">
-                        <HelpCircle className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-brand-olive shrink-0 stroke-[1.8]" />
+                        <span className="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-brand-olive/12 text-brand-olive flex items-center justify-center font-cormorant font-bold text-[11px] sm:text-[12px] shrink-0 select-none">
+                          Q
+                        </span>
                         <span className="font-cormorant text-[14.5px] sm:text-[16px] font-semibold text-brand-charcoal group-hover:text-brand-olive transition-colors leading-snug whitespace-nowrap">
                           <span className="sm:hidden">{faq.mobileQuestion || faq.question}</span>
                           <span className="hidden sm:inline">{faq.question}</span>

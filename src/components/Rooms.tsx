@@ -237,7 +237,7 @@ export default function Rooms({ onSelectRoomForBooking, onNavigate }: RoomsProps
             <div className="lg:col-span-5 flex flex-col justify-between space-y-6 pt-2 sm:pt-6 lg:pt-8">
               <div className="space-y-4">
                 
-                {/* Natural Motif Design Element without icon - Centered on mobile */}
+                {/* Natural Motif Design Element without icon - Centered on mobile, Left on tablet & desktop */}
                 <div className="flex items-center justify-center sm:justify-start gap-2 text-brand-olive pt-1">
                   <span className="text-[11px] font-cormorant tracking-[0.25em] uppercase font-semibold text-brand-olive">
                     SANCTUARY PRIVATE VILLA
@@ -245,7 +245,7 @@ export default function Rooms({ onSelectRoomForBooking, onNavigate }: RoomsProps
                   <span className="hidden sm:block h-px flex-1 bg-gradient-to-r from-brand-olive/30 via-brand-warm/60 to-transparent" />
                 </div>
 
-                {/* Room Name with Icon - Centered on mobile with icon on the same position/level */}
+                {/* Room Name with Icon - Centered on mobile, Left on tablet & desktop */}
                 <div className="border-b border-brand-warm/60 pb-3 flex items-center justify-center sm:justify-start text-center sm:text-left">
                   <h3 className="font-cormorant text-[19px] xs:text-[21px] sm:text-[25px] font-normal text-brand-charcoal inline-flex items-center justify-center gap-2">
                     <Sparkles className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-brand-olive shrink-0" />
@@ -379,9 +379,10 @@ export default function Rooms({ onSelectRoomForBooking, onNavigate }: RoomsProps
             transition={{ duration: 0.8 }}
             className="text-center max-w-2xl mx-auto space-y-2"
           >
-            <div className="flex items-center justify-center gap-2 text-brand-olive mb-1">
-              <span className="text-[13px] sm:text-[14px] font-cormorant font-bold tracking-[0.16em] uppercase">
-                EXCLUSIVE SIGNATURE EXPERIENCES
+            <div className="flex items-center justify-center gap-2 text-brand-olive mb-2 sm:mb-2.5">
+              <span className="text-[13px] sm:text-[14px] font-cormorant font-bold tracking-[0.16em] sm:tracking-[0.22em] uppercase">
+                <span className="sm:hidden">SPECIAL SIGNATURE</span>
+                <span className="hidden sm:inline tracking-[0.22em]">SIGNATURE EXPERIENCES</span>
               </span>
             </div>
             <h3 className="font-cormorant text-[26px] sm:text-[28px] font-normal text-brand-charcoal">
@@ -420,7 +421,13 @@ export default function Rooms({ onSelectRoomForBooking, onNavigate }: RoomsProps
               {
                 icon: <Utensils className="w-5 h-5 text-brand-olive stroke-[1.5]" />,
                 title: "웰컴 조식 트레이",
-                desc: "매일 아침 08:30, 객실 입구 히노끼 찬합으로 수제 요거트, 갓 구운 빵과 드립 커피가 안전하게 전달됩니다.",
+                desc: "매일 아침 08:30, 객실 입구 히노끼 찬합으로 수제 요거트, 갓 구운 빵과 드립 커피가 전달됩니다.",
+                descTablet: (
+                  <>
+                    매일 아침 08:30, 객실 입구 히노끼 찬합으로 수제 <br className="hidden sm:inline lg:hidden" />
+                    요거트, 갓 구운 빵과 드립 커피가 전달됩니다.
+                  </>
+                ),
                 img: IMAGES.breakfast,
               }
             ].map((guide, gIdx) => (
@@ -451,7 +458,8 @@ export default function Rooms({ onSelectRoomForBooking, onNavigate }: RoomsProps
                     </h4>
                   </div>
                   <p className="text-[13px] font-pretendard text-neutral-600 font-light leading-[1.8] flex-1">
-                    {guide.desc}
+                    <span className="sm:hidden lg:inline">{guide.desc}</span>
+                    <span className="hidden sm:inline lg:hidden">{guide.descTablet || guide.desc}</span>
                   </p>
                 </div>
               </motion.div>

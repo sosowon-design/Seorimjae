@@ -72,7 +72,7 @@ export default function Booking() {
   ];
 
   return (
-    <section id="booking-portal" className="bg-[#F5F2EB] min-h-screen py-16 sm:py-24 border-b border-brand-warm/60 select-none">
+    <section id="booking-portal" className="bg-[#F5F2EB] min-h-screen sm:min-h-0 lg:min-h-screen py-16 sm:py-24 border-b border-brand-warm/60 select-none">
       
       <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10 space-y-12">
         
@@ -234,7 +234,7 @@ export default function Booking() {
         </div>
 
         {/* Real-time Reservation Action Button */}
-        <div className="text-center pt-3 sm:pt-6">
+        <div className="text-center pt-3 sm:pt-6 sm:mb-10 lg:mb-0">
           <motion.a
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}

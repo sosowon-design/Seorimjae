@@ -76,13 +76,19 @@ export default function App() {
     });
   };
 
-  // Sync state with URL parameter to support direct linking and reloads
+  // Always start on the main page and reset scroll position on initial load
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get("page");
-    if (page && ["home", "story", "rooms", "experience", "notice", "booking"].includes(page)) {
-      setCurrentPage(page);
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
     }
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("page")) {
+      params.delete("page");
+      const query = params.toString();
+      const cleanUrl = window.location.pathname + (query ? `?${query}` : "") + window.location.hash;
+      window.history.replaceState(null, "", cleanUrl);
+    }
+    setCurrentPage("home");
     window.scrollTo(0, 0);
   }, []);
 

@@ -38,23 +38,27 @@ export default function Story({ onNavigate }: StoryProps) {
               </div>
 
               <h3 className="font-cormorant text-[26px] sm:text-[28px] font-normal text-brand-charcoal leading-[1.35] break-keep whitespace-normal text-center lg:text-left">
-                숲속 프라이빗 <br className="sm:hidden" />독채 풀빌라, 서림재
+                <span className="sm:hidden">프라이빗 풀빌라, 서림재</span>
+                <span className="hidden sm:inline">
+                  <span className="hidden lg:inline">숲속 </span>프라이빗 독채 풀빌라, 서림재
+                </span>
               </h3>
 
-              <div className="space-y-3 pt-1 text-[13.5px] sm:text-[14px] text-neutral-600 font-pretendard font-light leading-[1.85] break-keep text-left">
-                <p>
-                  서림재는 다른 사람들의 시선이나 방해 없이, 오직 우리만을 위해 설계된 오대산 솔숲 속 단독 독채 풀빌라입니다.
+              <div className="space-y-3 sm:space-y-0 lg:space-y-3 pt-1 text-[13.5px] sm:text-[14px] text-neutral-600 font-pretendard font-light leading-[1.85] break-keep text-center lg:text-left">
+                <p className="sm:inline lg:block">
+                  서림재는 다른 사람들의 시선이나 방해 없이, 오직 우리만을 위해 설계된 오대산 솔숲 속 단독 독채 풀빌라입니다.{" "}
                 </p>
-                <p>
-                  따뜻한 편백 히노끼 입욕과 향긋한 잎차 다도 공간, 밤하늘 별빛 아래 타오르는 참나무 불멍까지 머무는 모든 순간이 특별한 쉼이 됩니다.
+                <p className="hidden sm:inline lg:block">
+                  <br className="hidden sm:inline lg:hidden" />
+                  따뜻한 편백 히노끼 입욕과 향긋한 잎차 다도 공간, 밤하늘 별빛 아래 타오르는 참나무 불멍까지 머무는 모든 순간이 <br className="hidden sm:inline lg:hidden" />특별한 쉼이 됩니다.{" "}
                 </p>
-                <p>
-                  복잡했던 일상의 속도를 늦추고, 사랑하는 사람들과 함께 자연이 전하는 고요와 따스한 온기를 마음껏 누려보세요.
+                <p className="sm:inline lg:block">
+                  복잡했던 일상의 속도를 늦추고, 사랑하는 사람들과 함께 자연이 전하는 고요와 <br className="hidden sm:inline lg:hidden" />따스한 온기를 마음껏 누려보세요.
                 </p>
               </div>
 
-              {/* Mobile-Only Architecture Image - Placed directly above the card boxes */}
-              <div className="lg:hidden my-3 sm:my-4 rounded-2xl overflow-hidden shadow-md border border-brand-warm/80 bg-neutral-100">
+              {/* Mobile & Tablet Architecture Image - Generous breathing room above image */}
+              <div className="lg:hidden mt-7 mb-4 sm:mt-10 sm:mb-6 rounded-2xl overflow-hidden shadow-md border border-brand-warm/80 bg-neutral-100">
                 <motion.img
                   src={IMAGES.exterior}
                   alt="서림재 솔숲 독채 풀빌라 전경"
@@ -64,8 +68,8 @@ export default function Story({ onNavigate }: StoryProps) {
                 />
               </div>
 
-              {/* Core Facility Highlights (Respective Icons, Left-aligned) */}
-              <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-left">
+              {/* Core Facility Highlights (Respective Icons, Centered on mobile) */}
+              <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-center lg:text-left">
                 {[
                   {
                     title: "편백 히노끼 입욕",
@@ -86,7 +90,7 @@ export default function Story({ onNavigate }: StoryProps) {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-[#FAF8F3]/90 border border-brand-warm/70 px-3.5 py-2.5 rounded-lg shadow-2xs flex items-center justify-start gap-2.5"
+                    className="bg-[#FAF8F3]/90 border border-brand-warm/70 px-3.5 py-2.5 rounded-lg shadow-2xs flex items-center justify-center lg:justify-start gap-2.5"
                   >
                     {item.icon}
                     <span className="font-pretendard text-[12.5px] sm:text-[13.5px] font-normal text-neutral-700 tracking-tight whitespace-nowrap">
@@ -148,20 +152,39 @@ export default function Story({ onNavigate }: StoryProps) {
             {[
               {
                 mainTitle: "온전한 사적 휴식의 단독 공간",
+                mainTitleTablet: "온전한 휴식 공간",
                 desc: "외부 시선이나 소음 없이, 울창한 오대산 숲속에서 사랑하는 이들과 함께 오롯이 우리만의 시간에 몰입할 수 있습니다.",
+                descTablet: (
+                  <>
+                    외부 시선이나 소음 없이, 울창한 오대산 솔숲 속에서 <br className="hidden sm:inline lg:hidden" />
+                    우리만의 온전한 휴식에 몰입할 수 있습니다
+                  </>
+                ),
                 highlight: "단독 독채 & 프라이빗 가든",
+                highlightTablet: "프라이빗 공간",
                 img: IMAGES.roomInterior,
               },
               {
                 mainTitle: "24시간 식지 않는 따스한 온수풀",
+                mainTitleTablet: "따스한 온수풀",
                 desc: "시간 제약 없이 원할 때 언제든 뛰어들 수 있는 개별 온수풀에서 통유리창 너머 숲을 바라보며 따뜻한 힐링을 누려보세요.",
+                descTablet: "추가 비용이나 시간 제약 없는 온수풀에서 솔숲을 바라보며 자유롭게 유영할 수 있습니다",
                 highlight: "무제한 사계절 온수 스파",
+                highlightTablet: "사계절 온수 스파",
                 img: IMAGES.pool,
               },
               {
                 mainTitle: "자연과 함께 숨 쉬는 편백의 향기",
+                mainTitleTablet: "편백 히노끼 테라스",
                 desc: "천연 편백나무 대형 히노끼 탕과 정갈한 야외 참나무 불멍 테라스에서 향긋한 차와 온기로 하루의 피로를 녹여보세요.",
+                descTablet: (
+                  <>
+                    천연 편백 히노끼 입욕과 향긋한 잎차 다도, <br className="hidden sm:inline lg:hidden" />
+                    참나무 불멍 테라스가 전해주는 아늑한 쉼입니다
+                  </>
+                ),
                 highlight: "편백 히노끼 & 야외 파이어핏",
+                highlightTablet: "야외 파이어핏",
                 img: IMAGES.terrace,
               },
             ].map((val, idx) => (
@@ -185,23 +208,28 @@ export default function Story({ onNavigate }: StoryProps) {
                   </div>
 
                   {/* Generous padding between image and text */}
-                  <div className="p-6 sm:p-7 pt-7 sm:pt-8 space-y-3.5">
+                  <div className="p-6 sm:p-7 pt-7 sm:pt-8 space-y-3.5 text-center sm:text-center lg:text-left">
                     <h4 className="font-cormorant text-[18px] sm:text-[19px] font-semibold text-brand-charcoal leading-snug">
-                      {val.mainTitle}
+                      <span className="sm:hidden lg:inline">{val.mainTitle}</span>
+                      <span className="hidden sm:inline lg:hidden">{val.mainTitleTablet}</span>
                     </h4>
 
-                    <p className="text-[13px] text-neutral-600 font-pretendard font-light leading-[1.8] pt-1">
-                      {val.desc}
+                    <p className="text-[13px] text-neutral-600 font-pretendard font-light leading-[1.8] pt-1 break-keep">
+                      <span className="sm:hidden lg:inline">{val.desc}</span>
+                      <span className="hidden sm:inline lg:hidden">{val.descTablet}</span>
                     </p>
                   </div>
                 </div>
 
                 <div className="px-6 sm:px-7 pb-6 sm:pb-7 pt-0">
-                  <div className="bg-[#F9F7F2] border border-brand-warm/80 rounded-xl px-3.5 py-2.5 flex items-center justify-between">
-                    <span className="text-[11.5px] font-pretendard font-medium text-brand-charcoal">
-                      ✦ {val.highlight}
+                  <div className="bg-[#F9F7F2] border border-brand-warm/80 rounded-xl px-3.5 py-2.5 flex items-center justify-between sm:justify-center sm:gap-2.5 lg:justify-between">
+                    <span className="text-[11.5px] font-pretendard font-medium text-brand-charcoal whitespace-nowrap flex items-center gap-1.5">
+                      <span className="text-brand-olive font-bold">✦</span>
+                      <span className="sm:hidden lg:inline">{val.highlight}</span>
+                      <span className="hidden sm:inline lg:hidden">{val.highlightTablet}</span>
+                      <span className="hidden sm:inline lg:hidden text-brand-olive font-bold">✦</span>
                     </span>
-                    <Sparkles className="w-3.5 h-3.5 text-brand-olive shrink-0" />
+                    <Sparkles className="sm:hidden lg:block w-3.5 h-3.5 text-brand-olive shrink-0" />
                   </div>
                 </div>
               </motion.div>

@@ -71,9 +71,15 @@
     background-color: var(--color-brand-beige);
     color: var(--color-brand-charcoal);
     font-family: "Gowun Batang", serif !important;
+    word-break: keep-all;
+    overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, a, li, label, button {
+    word-break: keep-all;
   }
 
   /* Custom line-height and letter-spacing for the emotional stay vibe */

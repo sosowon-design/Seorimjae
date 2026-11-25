@@ -101,9 +101,9 @@ export default function Experience({ onNavigate }: ExperienceProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl text-center md:text-left mx-auto md:mx-0"
+            className="max-w-3xl text-center lg:text-left mx-auto lg:mx-0"
           >
-            <div className="flex items-center justify-center md:justify-start gap-2 text-brand-olive mb-3">
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-brand-olive mb-3">
               <span className="text-[13px] sm:text-[14px] tracking-[0.16em] font-bold uppercase font-cormorant">
                 AESTHETICS OF REST
               </span>
@@ -111,7 +111,7 @@ export default function Experience({ onNavigate }: ExperienceProps) {
             <h2 className="font-cormorant text-[26px] sm:text-[28px] font-normal text-brand-charcoal tracking-tight leading-[1.3]">
               즐거움이 더해지는 부대시설
             </h2>
-            <p className="text-[13.5px] sm:text-[14px] text-neutral-600 font-light mt-3 leading-[1.8] font-pretendard max-w-2xl mx-auto md:mx-0">
+            <p className="text-[13.5px] sm:text-[14px] text-neutral-600 font-light mt-3 leading-[1.8] font-pretendard max-w-2xl mx-auto lg:mx-0">
               <span className="hidden sm:inline">서림재의 다채로운 부대시설에서 온전한 쉼을 누려보세요.</span>
               <span className="sm:hidden">다채로운 부대시설에서 온전한 쉼을 누려보세요.</span>
             </p>
@@ -149,7 +149,23 @@ export default function Experience({ onNavigate }: ExperienceProps) {
                       {exp.title}
                     </h3>
                     <p className="font-pretendard text-[12.5px] text-neutral-600 font-light leading-[1.7] pt-1">
-                      {exp.description}
+                      {exp.id === "exp-tea" ? (
+                        <>
+                          <span className="sm:hidden lg:inline">{exp.description}</span>
+                          <span className="hidden sm:inline lg:hidden">
+                            편백 누마루에서 오대산 야생 잎차의 그윽한 향과 <br className="hidden sm:inline lg:hidden" />온기를 직접 우려내며 맑은 사색과 여유를 즐기실 수 있습니다.
+                          </span>
+                        </>
+                      ) : exp.id === "exp-spa" ? (
+                        <>
+                          <span className="sm:hidden lg:inline">{exp.description}</span>
+                          <span className="hidden sm:inline lg:hidden">
+                            천연 편백나무의 짙은 피톤치드 향과 미네랄 입욕 <br className="hidden sm:inline lg:hidden" />온수로 하루의 묵은 피로를 부드럽게 녹여내는 힐링 스파입니다.
+                          </span>
+                        </>
+                      ) : (
+                        exp.description
+                      )}
                     </p>
                   </div>
 
@@ -173,9 +189,9 @@ export default function Experience({ onNavigate }: ExperienceProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl text-center md:text-left mx-auto md:mx-0"
+            className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
           >
-            <div className="flex items-center justify-center md:justify-start gap-2 text-brand-olive mb-2">
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-brand-olive mb-2">
               <span className="text-[13px] sm:text-[14px] font-bold tracking-[0.16em] uppercase font-cormorant">
                 STAY JOURNAL
               </span>
@@ -183,7 +199,7 @@ export default function Experience({ onNavigate }: ExperienceProps) {
             <h3 className="font-cormorant text-[26px] sm:text-[28px] font-normal text-brand-charcoal">
               서림재에서 맞이하는<br className="sm:hidden" /> 오붓한 하루의 여정
             </h3>
-            <p className="text-[13.5px] font-pretendard font-light text-neutral-600 mt-3 leading-[1.75] mx-auto md:mx-0">
+            <p className="text-[13.5px] font-pretendard font-light text-neutral-600 mt-3 leading-[1.75] mx-auto lg:mx-0">
               시간의 흐름에 맞춰 설계된 사적 휴식 시나리오로<br className="sm:hidden" /> 지친 일상을 부드럽게 비워보세요.
             </p>
           </motion.div>
@@ -200,12 +216,22 @@ export default function Experience({ onNavigate }: ExperienceProps) {
                 time: "17:00",
                 title: "편백 히노끼 입욕",
                 desc: "통유리창 너머 석양이 지는 솔숲을 마주하며 즐기는 따스한 온수 스파",
+                descTablet: (
+                  <>
+                    통유리창 너머 석양이 지는 솔숲을 마주하며 즐기는 <br className="hidden sm:inline lg:hidden" />따스한 온수 스파
+                  </>
+                ),
                 icon: <Sparkles className="w-5 h-5 text-brand-olive stroke-[1.5]" />
               },
               {
                 time: "19:00",
                 title: "프라이빗 가든 다이닝",
                 desc: "웨버 바베큐 그릴과 신선한 제철 식재료로 오붓하게 채우는 저녁 식사",
+                descTablet: (
+                  <>
+                    웨버 바베큐 그릴과 신선한 제철 식재료로 오붓하게 <br className="hidden sm:inline lg:hidden" />채우는 저녁 식사
+                  </>
+                ),
                 icon: <Utensils className="w-5 h-5 text-brand-olive stroke-[1.5]" />
               },
               {
@@ -243,7 +269,8 @@ export default function Experience({ onNavigate }: ExperienceProps) {
                     {step.title}
                   </h4>
                   <p className="text-[12.5px] font-pretendard font-light text-neutral-600 leading-[1.7]">
-                    {step.desc}
+                    <span className="sm:hidden lg:inline">{step.desc}</span>
+                    <span className="hidden sm:inline lg:hidden">{step.descTablet || step.desc}</span>
                   </p>
                 </div>
               </motion.div>
@@ -261,15 +288,15 @@ export default function Experience({ onNavigate }: ExperienceProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.8 }}
-            className="border-b border-brand-warm/60 pb-4 sm:pb-5 space-y-2.5 sm:space-y-3 text-center sm:text-left"
+            className="border-b border-brand-warm/60 pb-4 sm:pb-5 space-y-2.5 sm:space-y-3 text-center lg:text-left"
           >
-            <div className="flex items-center justify-center sm:justify-start gap-2 text-brand-olive">
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-brand-olive">
               <span className="text-[13px] sm:text-[14px] font-cormorant font-bold tracking-[0.16em] uppercase">MORNING REFRESHMENT</span>
             </div>
             <h3 className="font-cormorant text-[26px] sm:text-[26px] font-normal text-brand-charcoal">
               시그니처 웰컴 조식 트레이
             </h3>
-            <p className="text-[12.5px] sm:text-[13.5px] font-pretendard font-light text-neutral-600 leading-[1.75] max-w-2xl mx-auto sm:mx-0">
+            <p className="text-[12.5px] sm:text-[13.5px] font-pretendard font-light text-neutral-600 leading-[1.75] max-w-2xl mx-auto lg:mx-0">
               <span className="hidden sm:inline">
                 매일 아침, 오대산 로컬 식재료와 수제 요거트, 갓 구운 빵으로 정성껏 차려지는 비대면 룸서비스 조식입니다.
               </span>
@@ -340,7 +367,7 @@ export default function Experience({ onNavigate }: ExperienceProps) {
                             정갈한 로컬 오가닉 세트
                           </h5>
                           <ul className="text-[13px] text-neutral-600 space-y-1.5 list-disc pl-4 font-light pt-1 font-pretendard">
-                            <li>유기농 로컬 수제 요거트 & 계절 생과일</li>
+                            <li>유기농 로컬 수제 요거트 & <br className="hidden sm:inline lg:hidden" />계절 생과일</li>
                             <li>갓 구운 무첨가 통밀 식빵 & 잼</li>
                             <li>따뜻한 수제 단호박 스프</li>
                           </ul>
@@ -374,7 +401,7 @@ export default function Experience({ onNavigate }: ExperienceProps) {
                             맞춤 웰컴 드링크
                           </h5>
                           <ul className="text-[13px] text-neutral-600 space-y-1.5 list-disc pl-4 font-light pt-1 font-pretendard">
-                            <li>스페셜티 로스팅 드립 커피 선택 가능</li>
+                            <li>스페셜티 로스팅 드립 <br className="hidden sm:inline lg:hidden" />커피 선택 가능</li>
                             <li>평창 오가닉 100% 사과 착즙 주스 선택 가능</li>
                             <li>알레르기 식이 사전 문의 시 맞춤 대체</li>
                           </ul>
